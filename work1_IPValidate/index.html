@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Edwin Andrés Samboní Ortiz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETO JS - TAREA 1 APLIWEB</title>
+    <link rel="shortcut icon" href="ico/js.ico" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/challengue.css">
+</head>
+
+<body>
+    <header>
+        <h1>Reto JavaScript: Control de entrada para direcciones IP</h1>
+    </header>
+    <section>
+        <aside>
+            <h2>Enunciado del reto propuesto</h2>
+            <p>
+                Se quiere implementar un cuadro de texto <strong>(input de tipo text)</strong> que permita el ingreso de
+                direcciones IP de <strong><em>manera interactiva</em></strong> aplicando las reglas de validación
+                necesarias y suficientes para garantizar el formato adecuado de una dirección IP, mientras el usuario
+                escribe. Se debe usar <em><ins>JavaScript puro</ins></em> o <em><ins>jQuery</ins></em> preferiblemente.
+                Recuerden que la validación se debe realizar mientras el usuario esta
+                escribiendo. Las reglas mínimas son:
+            </p>
+            <ol>
+                <li>Primer carácter diferente de punto '.'.</li>
+                <li>
+                    Máxima longitud de la cadena 15 caracteres, pero debe cambiar de acuerdo a los caracteres que se
+                    vayan digitado.
+                </li>
+                <li>Mínima longitud de cadena 7 caracteres.</li>
+                <li>Máximo 3 caracteres de punto.</li>
+                <li>Máximo 4 grupos de 3 dígitos</li>
+                <li>Eliminar los ceros a la izquierda en los grupos de 3 dígitos.</li>
+                <li>Valor numérico de cada grupo en el rango entre 0 y 255.</li>
+                <li>No se permiten puntos consecutivos.</li>
+                <li>Autocompletar el punto después de digitar 3 caracteres numéricos consecutivos.</li>
+                <li>
+                    Solo se permiten caracteres numéricos y el punto, no se permiten letras u otros caracteres
+                    especiales.
+                </li>
+                <li>
+                    No se permite copiar y pegar en el cuadro de texto
+                </li>
+            </ol>
+        </aside>
+        <main>
+            <h2>Solución del reto</h2>
+            <form id="myForm">
+                <label for="ipAdd">Ingresar una dirección IPv4 valida</label>
+                <input type="text" id="ipAdd" alt="Ingresar dirección IP" title="Dirección IP" placeholder="127.0.0.1" autocomplete="off" required>
+            </form>
+        </main>
+    </section>
+    <script src="src/js/challengue_js.js"></script>
+</body>
+
+</html>
