@@ -13,11 +13,11 @@ let realValue = 0;
 let myForm = document.getElementById('myForm');
 let ipAdd = document.getElementById('ipAdd');
 
-// DEACTIVATE THE PASTE EVENT
+// 11. DEACTIVATE THE PASTE EVENT
 ipAdd.addEventListener('paste', (e) =>{e.preventDefault();});
-// DEACTIVATE THE COPY EVENT
+// 11. DEACTIVATE THE COPY EVENT
 ipAdd.addEventListener('copy', (e) =>{e.preventDefault();});
-// DEACTIVATE THE CUT EVENT
+// 11. DEACTIVATE THE CUT EVENT
 ipAdd.addEventListener('cut', (e) =>{e.preventDefault();});
 
 // ACTIVATE THE KEYPRESS EVENT
@@ -33,6 +33,10 @@ ipAdd.addEventListener('keypress', (e) =>{
         }
         // 4. Avoid writing more than 3 points.
         if(e.key === '.' && noDot){
+            e.preventDefault();
+        }
+        // 5. Verify that there are only groups of 3 digits.
+        if(ipLimit){
             e.preventDefault();
         }
     }else{
@@ -54,6 +58,20 @@ ipAdd.addEventListener('input', (e) => {
     else{
         showWarn('dotWarn');
         noDot=false;
+    }
+    /*
+        5. Verify that there are only groups of 3 digits.
+        9. Autocomplete with the dot every time there is a group of 3 digits
+    */
+    if(ipAdd.value.match(/^\d{3}$|\.\d{3}$/)){
+        ipAdd.value = ipAdd.value+'.';
+    }
+    if(contDots>=3 && ipAdd.value.match(/\d{3}\.$/)){
+        ipAdd.value = ipAdd.value.slice(0,-1);
+        ipLimit=true;
+    }
+    else{
+        ipLimit=false;
     }
     // 2. IPv4 Maximum Limit
     if(ipAdd.value.length >= maxLenInput){
