@@ -6,7 +6,7 @@ const maxDot = 3;
 // CREATE THE NECESSARY VARIABLES.
 let ipLimit = false;
 let noDot = false;
-let contPoints = 0;
+let contDots = 0;
 let realValue = 0;
 
 // REGISTER THE DOM ELEMENTS.
@@ -25,11 +25,15 @@ ipAdd.addEventListener('keypress', (e) =>{
     // 10. Prevent that other characters that aren't the dot and numbers are used.
     if(/\d|\./.test(e.key)){
         // 1. Avoid starting with a dot.
-        if (e.key==='.' && ipAdd.value.length == 0) {
+        if (e.key === '.' && ipAdd.value.length == 0) {
             e.preventDefault();
-            showWarn('dotWarn','Una dirección IPv4 no inician con "."');
+            showWarn('beginDotWarn','Una dirección IPv4 no inician con "."');
         } else{
-            showWarn('dotWarn');
+            showWarn('beginDotWarn');
+        }
+        // 4. Avoid writing more than 3 points.
+        if(e.key === '.' && noDot){
+            e.preventDefault();
         }
     }else{
         e.preventDefault();
@@ -37,8 +41,22 @@ ipAdd.addEventListener('keypress', (e) =>{
 });
 // ACTIVATE THE INPUT EVENT
 ipAdd.addEventListener('input', (e) => {
+    contDots = ipAdd.value.match(/\./g) ? ipAdd.value.match(/\./g).length : 0;
+    /*
+        4. Avoid writing more than 3 dots.
+        7. Verify that there are no consecutive dots.
+    */
+    if(contDots>maxDot || ipAdd.value.match(/\.\.$/)){
+        ipAdd.value = ipAdd.value.slice(0, -1);
+        showWarn('dotWarn','Una dirección IP tiene específicamente 3 puntos, los cuales no pueden ser consecutivos');
+        noDot=true;
+    }
+    else{
+        showWarn('dotWarn');
+        noDot=false;
+    }
     // 2. IPv4 Maximum Limit
-    if(ipAdd.value.length >= maxLenInput || ipLimit){
+    if(ipAdd.value.length >= maxLenInput){
         ipAdd.value = ipAdd.value.slice(0, 15);
         showWarn('maxIpWarn');
     }else{
@@ -66,8 +84,8 @@ function showWarn(idWarn,warnMessage){
         // Put the identifier to the warning message.
         newSpanWarn.id=idWarn;
         // Put the message style.
-        newSpanWarn.style.marginInline='5%';
-        newSpanWarn.style.marginTop='1%';
+        newSpanWarn.style.marginInline='30px';
+        newSpanWarn.style.marginTop='10px';
         newSpanWarn.style.display='block';
         newSpanWarn.style.fontFamily='Times New Roman';
         newSpanWarn.style.fontSize='1.5vw';

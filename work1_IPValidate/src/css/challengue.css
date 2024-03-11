@@ -1,5 +1,5 @@
 header{
-    margin: 50px;
+    margin-inline: 50px;
     text-align: center;
     font-family: 'Times New Roman';
     font-size: 1.7vw;
@@ -57,14 +57,14 @@ form{
     max-width: 100%;
 }
 label{
-    margin-top: 30%;
+    margin-top: 125px;
     display: block;
     text-align: center;
     font-family: 'Times New Roman';
     font-size: 2.5vw;
 }
 input{
-    margin: 5%;
+    margin-inline: 30px;
     max-width: 100%;
     font-family: 'Times New Roman';
     font-size: 2.5vw;
