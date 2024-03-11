@@ -46,6 +46,13 @@ ipAdd.addEventListener('keypress', (e) =>{
 // ACTIVATE THE INPUT EVENT
 ipAdd.addEventListener('input', (e) => {
     contDots = ipAdd.value.match(/\./g) ? ipAdd.value.match(/\./g).length : 0;
+    realValue = ipAdd.value.match(/\d{3}$/) ? Number(ipAdd.value.match(/\d{3}$/)[0]) : 0;
+    // 6. Verify that leading zeros are removed and that the maximum value is 255.
+    if(realValue>255){
+        ipAdd.value = ipAdd.value.replace(/\d{3}$/,255);
+    }else{
+        ipAdd.value = ipAdd.value.replace(/\d{3}$/,realValue);
+    }
     /*
         4. Avoid writing more than 3 dots.
         7. Verify that there are no consecutive dots.
