@@ -24,15 +24,31 @@ ipAdd.addEventListener('cut', (e) =>{e.preventDefault();});
 ipAdd.addEventListener('keypress', (e) =>{
     // 10. Prevent that other characters that aren't the dot and numbers are used.
     if(/\d|\./.test(e.key)){
-        // 2. Limit the Ipv4
-        if(ipAdd.value.length == maxLenInput || ipLimit){
+        // 1. Avoid starting with a dot.
+        if (e.key==='.' && ipAdd.value.length == 0) {
             e.preventDefault();
-            showWarn('maxIp');
-        }else{
-            showWarn('maxIp',`Para completar la dirección restan ${maxLenInput-ipAdd.value.length} caracteres.`);
+            showWarn('dotWarn','Una dirección IPv4 no inician con "."');
+        } else{
+            showWarn('dotWarn');
         }
     }else{
         e.preventDefault();
+    }
+});
+// ACTIVATE THE INPUT EVENT
+ipAdd.addEventListener('input', (e) => {
+    // 2. IPv4 Maximum Limit
+    if(ipAdd.value.length >= maxLenInput || ipLimit){
+        ipAdd.value = ipAdd.value.slice(0, 15);
+        showWarn('maxIpWarn');
+    }else{
+        showWarn('maxIpWarn',`Para conseguir la máxima longitud restan ${maxLenInput-ipAdd.value.length} caracteres.`);
+    }
+    // 3. IPv4 minimum Limit
+    if(ipAdd.value.length<minLenInput) {
+        showWarn('minIpWarn',`Para conseguir la mínima longitud restan ${minLenInput-ipAdd.value.length} caracteres.`);
+    }else{
+        showWarn('minIpWarn');
     }
 });
 
@@ -65,4 +81,5 @@ function showWarn(idWarn,warnMessage){
 }
 
 // Call the showWarn function to present the initial warning.
-showWarn ('maxIp','Las direcciones IP tienen un total de 15 caracteres');
+showWarn('maxIpWarn','Las direcciones IP tienen máximo 15 caracteres');
+showWarn('minIpWarn','Las direcciones IP tienen mínimo 7 caracteres');
