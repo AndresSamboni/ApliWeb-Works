@@ -2,3 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Dark mode according to the system */
+:root {
+  color-scheme: light dark;
+}
