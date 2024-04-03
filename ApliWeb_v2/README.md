@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Conditions to develop
+
+The project is developed to be used in Spanish by the user, but all the code is created in English. Additionally, variables are defined with camelCase, constants are defined with capital letters, and all declarations have the full TypeScript language syntax.
