@@ -14,7 +14,7 @@ module.exports = {
         'title': '#dee7e7',
         'content': '#c6d6d6',
         'selected': '#1c64f2',
-        'shadow': '#c67f32'
+        'text-shadow': '#396eda'
       }
     },
   },

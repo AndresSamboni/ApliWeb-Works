@@ -8,6 +8,7 @@ import { initFlowbite } from 'flowbite';
 
 //MY COMPONENTS
 import { NavigationComponent } from '../navigation/navigation.component';
+import { InformationComponent } from '../information/information.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { NavigationComponent } from '../navigation/navigation.component';
   imports: [
     CommonModule,
     RouterModule,
-    NavigationComponent
+    NavigationComponent,
+    InformationComponent
   ],
   templateUrl: './root.component.html',
   styleUrl: './root.component.css'
@@ -24,11 +26,11 @@ export class RootComponent {
   //ATTRIBUTES
   public screenW: number;
   //CONSTRUCTOR
-  constructor() {
+  public constructor() {
     this.screenW = window.innerWidth;
   }
   //METHOD ONINIT
-  ngOnInit() {
+  public ngOnInit():void {
     initFlowbite();
     window.onresize = () => {
       this.screenW = window.innerWidth;

@@ -1,0 +1,54 @@
+<main class="max-w-5xl my-10 p-4 space-y-4 ">
+  <section class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <article class="space-y-4">
+      <h2 class="text-center text-2xl leading-6 font-semibold text-title"><strong>Acerca del proyecto</strong></h2>
+      <p class="text-lg text-content"><strong>ApliWeb v2.0</strong> nace como un proyecto propio inspirado en
+        la teoría presentada dentro de las clases dictadas por el docente {{getTeacherName()}}, que dicta la primer
+        mitad de
+        la asignatura denominada "<em>Desarrollo de Aplicaciones Web</em>" (ApliWeb).
+      </p>
+      <p class="text-lg text-title"><strong>ApliWeb v2.0</strong>, tal como la idea original presentada por
+        el docente, fue desarrollada utilizando <em>Angular</em> en su versión 17, asimismo busca facilitar la labor
+        utilizando como framework de las hojas de estilo en cascada el ya conocido <em>tailwind</em>.
+      </p>
+    </article>
+    <article class="space-y-4">
+      <h2 class="text-center text-2xl leading-6 font-semibold text-title"><strong>Desarrollador</strong></h2>
+      <p class="text-lg text-content">El proyecto fue desarrollado por <em>{{ getMyName() }}</em>,
+        estudiante de la Universidad del Cauca dentro del programa de <strong><em>Ingeniería Electrónica y
+            Telecomunicaciones</em></strong>. La idea original del proyecto es perteneciente a <em>{{ getTeacherName()
+          }}</em> docente de la misma universidad y quien dirige la primer mitad de la asignatura "<em>Desarrollo de
+          Aplicaciones Web</em>" (ApliWeb).
+      </p>
+      <section class="flex flex-col">
+        <article class="flex justify-center">
+          <img class="w-1/3 rounded-s-full pl" src="../../../assets/img/photo_edso.webp"
+            alt="Fotografía de {{getMyName()}}">
+          <img class="w-1/3 rounded-e-full pr" src="../../../assets/img/photo_jahg.webp"
+            alt="Fotografía de {{getTeacherName()}}">
+        </article>
+        <article class="flex justify-center items-center m-2">
+          <h2 class="text-center text-lg font-semibold leading-6 text-title">{{getMyName()}}</h2>
+          <h2 class="text-center text-lg font-semibold leading-6 text-title">{{getTeacherName()}}</h2>
+        </article>
+      </section>
+    </article>
+  </section>
+  <h2 class="text-center text-2xl leading-6 font-semibold text-title"><strong>Objetivo Principal</strong></h2>
+  <p class="text-lg text-content">Realizar el maquetado y diseño de una aplicación web basada en el
+    framework de Angular en su versión 17 bajo el enfoque de código recursivo.
+  </p>
+  <h2 class="text-center text-2xl leading-6 font-semibold text-title"><strong>Objetivos Específicos</strong></h2>
+  <ul class="list-disc list-inside">
+    <li class="list-item text-lg text-title">Utilización del framework de hojas de estilo denominado Tailwind.</li>
+    <li class="list-item text-lg text-title">Diseño de componentes recursivos.</li>
+    <li class="list-item text-lg text-title">Implementación de las directrices de Angular.</li>
+    <li class="list-item text-lg text-title">Formularios reactivos.</li>
+    <li class="list-item text-lg text-title">Interfaz adaptativa.</li>
+    <li class="list-item text-lg text-title">Disposición ordenada de archivos.</li>
+    <li class="list-item text-lg text-title">Consumo de una API.</li>
+    <li class="list-item text-lg text-title">Aplicación de buenas prácticas.</li>
+    <li class="list-item text-lg text-title">Comunicación entre componentes.</li>
+    <li class="list-item text-lg text-title">Utilización de rutas.</li>
+  </ul>
+</main>

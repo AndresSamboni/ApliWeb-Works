@@ -12,11 +12,11 @@ import { Component, Input } from '@angular/core';
 })
 export class NavigationComponent {
   //INPUT ATTRIBUTES
-  @Input() screenW: number;
+  @Input() public screenW: number;
   //ATTRIBUTES
   public minScreen: number;
   //CONSTRUCTOR
-  constructor() {
+  public constructor() {
     this.screenW = window.innerWidth;
     this.minScreen = 730;
   }

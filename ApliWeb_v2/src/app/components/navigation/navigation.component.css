@@ -4,3 +4,7 @@ hr {
   height: .1rem;
   background-image: linear-gradient(to right, transparent, #e9e0d1, #1c64f2, #1c64f2, #e9e0d1, transparent);
 }
+
+.opSelect:hover{
+  text-shadow: #396eda -2px 2px 10px;
+}
