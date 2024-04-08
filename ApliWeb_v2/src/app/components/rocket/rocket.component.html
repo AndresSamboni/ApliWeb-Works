@@ -1,0 +1,10 @@
+<article class="m-4 p-4 rounded-3xl border-x-2 border-b-2 border-borders shadow-lg shadow-selected bg-nav">
+  <img class="rounded-3xl h-80 w-full" src="{{ rocket.flickr_images[0] }}"
+    alt="Fotografía del cohete {{ rocket.rocket_name }}">
+  <h2 class="text-2xl leading-6 font-semibold text-title text-center">{{ rocket.rocket_name.toUpperCase() }}</h2>
+  <section class="grid grid-cols-2 text-center text-xl text-content">
+    <h3>{{ rocket.height.meters }} metros</h3>
+    <h3>{{ rocket.company }}</h3>
+    <h3 class="col-span-2">Costo por lanzamiento: ${{ rocket.cost_per_launch }}</h3>
+  </section>
+</article>

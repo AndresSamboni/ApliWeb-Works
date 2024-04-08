@@ -8,12 +8,12 @@ module.exports = {
     extend: {
       colors: {
         'header-content': '#e9e0d1',
-        'footer-content': '#9ca3af',
         'nav': '#282832',
         'page': '#140d1a',
         'title': '#dee7e7',
         'content': '#c6d6d6',
         'selected': '#1c64f2',
+        'borders': '#9ca3af',
         'text-shadow': '#396eda'
       }
     },

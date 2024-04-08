@@ -1,0 +1,9 @@
+<section class="max-w-5xl my-3 p-4 space-y-4">
+  <h1 class="text-center text-3xl font-semibold text-title">Cohetes Cargados en el sistema</h1>
+  <hr>
+  <article class="grid gap-6" [ngClass]="{'grid-cols-1': screenW<=minScreen, 'grid-cols-2': screenW>minScreen}">
+    @for (element of rockets; track $index) {
+    <app-rocket [rocket]="element" />
+    }
+  </article>
+</section>

@@ -18,7 +18,7 @@ export class NavigationComponent {
   //CONSTRUCTOR
   public constructor() {
     this.screenW = window.innerWidth;
-    this.minScreen = 730;
+    this.minScreen = 801;
   }
   //METHOD REFRESH
   public refresh(): void {

@@ -9,6 +9,7 @@ import { initFlowbite } from 'flowbite';
 //MY COMPONENTS
 import { NavigationComponent } from '../navigation/navigation.component';
 import { InformationComponent } from '../information/information.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { InformationComponent } from '../information/information.component';
     CommonModule,
     RouterModule,
     NavigationComponent,
-    InformationComponent
+    // InformationComponent
+    DashboardComponent
   ],
   templateUrl: './root.component.html',
   styleUrl: './root.component.css'
