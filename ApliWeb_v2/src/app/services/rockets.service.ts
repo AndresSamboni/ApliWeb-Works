@@ -20,21 +20,21 @@ export class RocketsService {
   private rockets: Array<string>;
   private url: string;
   //CONSTRUCTOR
-  constructor(private http: HttpClient) {
+  public constructor(private http: HttpClient) {
     this.rockets = new Array<string>();
     this.url = 'https://api.spacexdata.com/v3/rockets/';
   }
   //ROCKETS METHODS
-  getRockets():Array<string> {
+  public getRockets():Array<string> {
     return this.rockets;
   }
-  setRocket(rocket: string):void {
+  public setRocket(rocket: string):void {
     this.rockets.push(rocket);
   }
-  removeRocket(rocket: string): void{
+  public removeRocket(rocket: string): void{
     this.rockets.splice(this.rockets.indexOf(rocket), 1);
   }
-  loadRockets(): Observable<Array<RocketInterface>> {
+  public loadRockets(): Observable<Array<RocketInterface>> {
     return this.http.get<Array<RocketInterface>>(this.url);
   }
 }

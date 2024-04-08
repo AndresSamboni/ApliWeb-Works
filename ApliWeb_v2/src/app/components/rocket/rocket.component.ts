@@ -15,7 +15,7 @@ export class RocketComponent {
   //INPUT ATTRIBUTES
   @Input() public rocket: RocketInterface;
   //CONSTRUCTOR
-  constructor() {
+  public constructor() {
     this.rocket = {
       rocket_id: '',
       cost_per_launch: 0,

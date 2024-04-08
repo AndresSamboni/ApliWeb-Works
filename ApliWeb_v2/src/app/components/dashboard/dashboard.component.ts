@@ -21,14 +21,14 @@ export class DashboardComponent {
   public rockets: Array<RocketInterface>;
   private names: Array<string>;
   //CONSTRUCTOR
-  constructor(private service: RocketsService) {
+  public constructor(private service: RocketsService) {
     this.screenW = window.innerWidth;
     this.minScreen = 801;
     this.rockets = new Array<RocketInterface>();
     this.names = service.getRockets();
   }
   //METHOD ONINIT
-  ngOnInit():void {
+  public ngOnInit():void {
     this.service.loadRockets().subscribe((newRockets: Array<RocketInterface>) => {
       this.rockets = newRockets;
     });
